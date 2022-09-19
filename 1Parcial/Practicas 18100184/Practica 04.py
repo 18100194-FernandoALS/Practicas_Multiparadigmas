@@ -16,7 +16,7 @@ while (opcion != 0):
     if(opcion == 1): agregarMateria()
 
 totalCreditos = 0
-print('\nResumen:\n----------')
+print('\nResumen:\n--------')
 for asignatura, creditos in reticula.items():
     print(f'{asignatura} tiene {creditos} créditos.')
     totalCreditos += creditos
