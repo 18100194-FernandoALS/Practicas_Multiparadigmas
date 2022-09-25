@@ -13,35 +13,42 @@ class Usuario:
         return self._usuario
     @usuario.setter
     def usuario(self,a):
-        self.usuario = a
+        self._usuario = a
     
     @property
     def password(self):
         return self._password
     @password.setter
     def password(self,a):
-        self.password = a
+        self._password = a
 
     @property
     def rol(self):
         return self._rol
     @rol.setter
     def rol(self,a):
-        self.rol = a
+        self._rol = a
 
     @property
     def nombre(self):
         return self._nombre
     @nombre.setter
     def nombre(self,a):
-        self.nombre = a
+        self._nombre = a
 
     @property
     def CURP(self):
         return self._CURP
     @CURP.setter
     def CURP(self,a):
-        self.CURP = a
+        self._CURP = a
+        
+    @property
+    def ciudad(self):
+        return self._ciudad
+    @CURP.setter
+    def ciudad(self,a):
+        self._ciudad = a
 
 """
 8.2.-Realizar un programa que contenga el siguiente menú
