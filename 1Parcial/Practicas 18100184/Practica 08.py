@@ -9,12 +9,12 @@
 
 class Usuario:
     def __init__(self,usuario,contraseña,rol,nombre,curp,ciudad) -> None:
-        self._user= usuario
+        self._usuario= usuario
         self._password = contraseña
-        self._role = rol
-        self._name = nombre
-        self._curp = curp
-        self._city = ciudad
+        self._rol = rol
+        self._nombre = nombre
+        self._CURP = curp
+        self._ciudad = ciudad
     
     @property 
     def usuario(self):
