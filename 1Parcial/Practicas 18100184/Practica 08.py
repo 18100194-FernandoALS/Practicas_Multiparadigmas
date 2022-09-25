@@ -46,7 +46,7 @@ class Usuario:
     @property
     def ciudad(self):
         return self._ciudad
-    @CURP.setter
+    @ciudad.setter
     def ciudad(self,a):
         self._ciudad = a
 
