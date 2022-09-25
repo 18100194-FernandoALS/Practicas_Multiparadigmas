@@ -79,14 +79,18 @@ def Registro():
 def InicioSesion():
     print("Ingrese sus credenciales: ")
 
-opcion = input("Seleccione una opcion: \n1.- Registro\n2.- Inicio de sesión\n3.- Salida\n")
-
-while (opcion != 0):
-    if( opcion == "1"): Registro()
-    if (opcion == "2"): InicioSesion()
+bandera = True
+while (bandera):
+    opcion = input("Seleccione una opcion: \n1.- Registro\n2.- Inicio de sesión\n3.- Salida\n")
+    if( opcion == "1"): 
+        bandera = False
+        Registro()        
+    if (opcion == "2"): 
+        bandera = False
+        InicioSesion()
     else:
         print("Ingrese una opcion valida")
-        break
+        continue
 
 
 # 8.3.- Declarar un usuario con rol “Administrador” el cual al momento de iniciar sesión despliegue la información de todos los usuarios registrados al momento.
