@@ -8,6 +8,14 @@
 # Ciudad
 
 class Usuario:
+    def __init__(self,usuario,contraseña,rol,nombre,curp,ciudad) -> None:
+        self._user= usuario
+        self._password = contraseña
+        self._role = rol
+        self._name = nombre
+        self._curp = curp
+        self._city = ciudad
+    
     @property 
     def usuario(self):
         return self._usuario
