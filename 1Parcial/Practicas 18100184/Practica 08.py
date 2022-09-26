@@ -68,13 +68,46 @@ que por defecto será rol cliente, no se permitirán usuarios con CURP repetido 
 La opción de inicio de sesión permitirá al usuario introducir sus credenciales al ser correctas desplegar en pantalla la información del usuario
  de lo contrario mostrar mensaje de “datos incorrectos“
 """
+import sys
+lusuario = ["FernandoL","JesusV","EduardoZ"]
+lpassword = ["123Fer", "123Jes", "123Edu"]
+lrol = ["cliente","cliente","cliente"]
+lnombre = ["Fernando","Jesus","Eduardo"]
+lCURP = ["FE1","JE2","ED3"]
+def agregarRegistro(u,p,r,n,c):
+    lusuario.append(u)
+    lpassword.append(p)
+    lrol.append(r)
+    lnombre.append(n)
+    lCURP.append(c)
+
+def imprimirRegistro(ind):
+    print(f"{lusuario[ind]}\n{lrol[ind]},\n{lnombre[ind]},\n{lCURP[ind]}")
+
+def comprobarRegistro(us,pas,rl,nom,curp):
+    for i in lusuario:
+        if i != us:
+            for j in lpassword:
+                if j != pas:
+                    for index,k in enumerate(lCURP):
+                        if k != curp:
+                            agregarRegistro(us,pas,rl,nom,curp)
+                            print("Registrado")
+                            imprimirRegistro(-1)
+                            sys.exit()
+                        else:
+                            print("El usuario ya existe")
+                            sys.exit()
+    
 def Registro():
     print("Ingrese los siguientes datos:")
     usuario = input("Ingrese su usuario: ")
     password = input("Ingrese su contraseña: ")
-    rol = "usuario"
-    nombre = input("Ingrese su nombre:")
-    CURP = input("Ingrese su CURP:")
+    rol = "cliente"
+    nombre = input("Ingrese su nombre: ")
+    CURP = input("Ingrese su CURP: ")
+    comprobarRegistro(usuario,password,rol,nombre,CURP)
+    
 
 def InicioSesion():
     print("Ingrese sus credenciales: ")
@@ -88,6 +121,9 @@ while (bandera):
     if (opcion == "2"): 
         bandera = False
         InicioSesion()
+    if (opcion == "3"): 
+        bandera = False
+        print("Nos vemos usuario.")
     else:
         print("Ingrese una opcion valida")
         continue
