@@ -69,11 +69,12 @@ La opción de inicio de sesión permitirá al usuario introducir sus credenciale
  de lo contrario mostrar mensaje de “datos incorrectos“
 """
 import sys
-lusuario = ["FernandoL","JesusV","EduardoZ"]
-lpassword = ["123Fer", "123Jes", "123Edu"]
-lrol = ["cliente","cliente","cliente"]
-lnombre = ["Fernando","Jesus","Eduardo"]
-lCURP = ["FE1","JE2","ED3"]
+lusuario = ["FernandoL","JesusV","EduardoZ","LCastillo"]
+lpassword = ["123Fer", "123Jes", "123Edu","Cas123"]
+lrol = ["cliente","cliente","cliente","Administrador"]
+lnombre = ["Fernando","Jesus","Eduardo", "Luis Daniel"]
+lCURP = ["FE1","JE2","ED3","LDC4"]
+
 def agregarRegistro(u,p,r,n,c):
     lusuario.append(u)
     lpassword.append(p)
@@ -82,17 +83,25 @@ def agregarRegistro(u,p,r,n,c):
     lCURP.append(c)
 
 def imprimirRegistro(ind):
-    print(f"{lusuario[ind]}\n{lrol[ind]},\n{lnombre[ind]},\n{lCURP[ind]}")
+    print(f'Usuario'.center(20,'='))
+    print(f"Usuario: {lusuario[ind]}\nRol: {lrol[ind]}\nNombre: {lnombre[ind]}\nCurp: {lCURP[ind]}")
+    print(f''.center(20,'='))
+
+def imprimirRegistros():
+    print(f'Usuario'.center(20,'='))
+    print(f"Usuarios: {lusuario}\nRoles: {lrol}\nNombres: {lnombre}\nCurps: {lCURP}")
+    print(f''.center(20,'='))
+    
 
 def comprobarRegistro(us,pas,rl,nom,curp):
     for i in lusuario:
         if i != us:
             for j in lpassword:
                 if j != pas:
-                    for index,k in enumerate(lCURP):
+                    for k in lCURP:
                         if k != curp:
                             agregarRegistro(us,pas,rl,nom,curp)
-                            print("Registrado")
+                            print("\nRegistrado")
                             imprimirRegistro(-1)
                             sys.exit()
                         else:
@@ -111,19 +120,40 @@ def Registro():
 
 def InicioSesion():
     print("Ingrese sus credenciales: ")
+    usuario = input("Ingrese su usuario: ")
+    password = input("Ingrese su contraseña: ")
+    comprobarInicio(usuario, password)
+    """if(comprobarInicio()):
+        pass
+    else:
+        pass"""
+        
+
+def comprobarInicio(us, pas):
+    for index, i in enumerate(lusuario):
+        if i == us:
+            for j in lpassword:
+                if j == pas:
+                    if (lrol[index] == "Administrador"):
+                        imprimirRegistros()
+                    else:
+                        imprimirRegistro(index)
 
 bandera = True
 while (bandera):
     opcion = input("Seleccione una opcion: \n1.- Registro\n2.- Inicio de sesión\n3.- Salida\n")
     if( opcion == "1"): 
         bandera = False
-        Registro()        
+        Registro()
+        sys.exit()        
     if (opcion == "2"): 
         bandera = False
         InicioSesion()
+        sys.exit()
     if (opcion == "3"): 
         bandera = False
         print("Nos vemos usuario.")
+        sys.exit()
     else:
         print("Ingrese una opcion valida")
         continue
