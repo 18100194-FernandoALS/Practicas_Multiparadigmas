@@ -6,4 +6,4 @@ def ImprimeDiccionario(d):
     for key in d: 
         print("key:", key, "Value:", d[key]) 
            
-#ImprimeDiccionario({'a':1, 'b':2, 'c':3} )
+ImprimeDiccionario({'a':1, 'b':2, 'c':3} )
