@@ -21,6 +21,10 @@ class Usuario:
     def __str__(self) -> str:
         return f'Usuario: {self.usuario}, {self.password}, {self.rol}, {self.nombre}, {self.curp}, {self.ciudad}'
 
+# # Comprobacion 
+# miUsuario = Usuario("Jesus32","Michu22","Admin","Jesus","VIHJ9912","NLD") 
+# print(miUsuario.usuario,miUsuario.rol,miUsuario.nombre,miUsuario.ciudad) 
+
 """
 8.2.-Realizar un programa que contenga el siguiente menú
 1.- Registro
@@ -33,9 +37,11 @@ La opción de inicio de sesión permitirá al usuario introducir sus credenciale
 """
 
 usuarios = {}
+
+# 8.3.- Declarar un usuario con rol “Administrador” el cual al momento de iniciar sesión despliegue la información de todos los usuarios registrados al momento.
 miUsuario = Usuario("Eduardo2022","1234","Administrador","Eduardo", "GOZE000712HTSMXDA1", "Nvo Laredo") #8.3
-#usuarios.append(miUsuario)
 usuarios["Eduardo2022"] = miUsuario
+
 def Registro():
     print("Ingrese los siguientes datos:")
     usuario = input("\nIngrese su usuario: ")
@@ -46,7 +52,7 @@ def Registro():
     ciudad = input("\nIngrese la ciudad: ")
     insertar = True
     os.system ("cls")
-    #for usuario in usuarios:
+
     for curp in usuarios:
         if CURP == curp:
             print("Este CURP ya se uso previamente con otro usuario")
@@ -78,7 +84,7 @@ def InicioSesion():
                 os.system ("cls")
                 print('--- USUARIO---')
                 print(usuario)
-                print("\n'")
+                print("\n")
         else:
             print("Contraseña incorrecta")
     else:
@@ -91,12 +97,10 @@ def lee_entero() -> int:
            entrada = int(entrada)
            return entrada
        except ValueError:
-           #print ("La entrada es incorrecta: escribe un numero entero")
            return 9
 
 opcion = 0
 while (opcion != 3):
-    #opcion = int(input("Seleccione una opcion: \n1.- Registro\n2.- Inicio de sesión\n3.- Salida\n"))
     opcion = lee_entero()
     if( opcion == 1): 
         Registro()
@@ -106,8 +110,6 @@ while (opcion != 3):
         print("\n")
     if (opcion == 3): break
     else:
-        #os.system ("cls")
         print("Ingrese una opcion valida\n")
 
 
-# 8.3.- Declarar un usuario con rol “Administrador” el cual al momento de iniciar sesión despliegue la información de todos los usuarios registrados al momento.
