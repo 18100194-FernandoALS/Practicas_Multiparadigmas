@@ -41,12 +41,13 @@ usuarios = {}
 # 8.3.- Declarar un usuario con rol “Administrador” el cual al momento de iniciar sesión despliegue la información de todos los usuarios registrados al momento.
 miUsuario = Usuario("Eduardo2022","1234","Administrador","Eduardo", "GOZE000712HTSMXDA1", "Nvo Laredo") #8.3
 usuarios["Eduardo2022"] = miUsuario
-
+miUsuario = Usuario("Fernando2018","1236","Cliente","Fernando", "FALP003", "Nvo Leon") #8.3
+usuarios["Fernando2018"] = miUsuario
 def Registro():
     print("Ingrese los siguientes datos:")
     usuario = input("\nIngrese su usuario: ")
     password = input("\nIngrese su contraseña: ")
-    rol = "usuario"
+    rol = "Cliente"
     nombre = input("\nIngrese su nombre:")
     CURP = input("\nIngrese su CURP:")
     ciudad = input("\nIngrese la ciudad: ")
