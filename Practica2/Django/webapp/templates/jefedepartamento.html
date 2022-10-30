@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD EN PYTHON</title>
+</head>
+<body>
+    <div><a href="{% url 'index'%}">Regresar al inicio</a></div>
+            
+    <div>
+        <h1>JEFES DE DEPARTAMENTO</h1>
+        <a href="agregar_jefedept">Agregar Jefe de Departamento</a>
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>ID_EMPLEADO</th>
+                    <th>FECHA_INICIO</th>
+                    <th>FECHA_FIN</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for jefe in jefes %}
+                <tr>
+                    <td>{{jefe.id}}</td>
+                    <td>{{jefe.idDepartamento}}</td>
+                    <td>{{jefe.idEmpleado}}</td>
+                    <td>{{jefe.fecha_inicio}}</td>
+                    <td>{{jefe.fecha_fin}}</td>
+                    <td><a href="detalle_jefedept/{{jefe.id}}">Ver Detalle</a></td>
+                    <td><a href="editar_jefedept/{{jefe.id}}">Editar Jefe De Departamento</a></td>
+                    <td><a href="eliminar_jefedept/{{jefe.id}}">Eliminar Jefe De Departamento</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

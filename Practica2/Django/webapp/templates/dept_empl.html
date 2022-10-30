@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD EN PYTHON</title>
+</head>
+<body>
+    <div><a href="{% url 'index'%}">Regresar al inicio</a></div>
+            
+    <div>
+        <h1>RELACION DEPT_EMPL</h1>
+        <a href="nuevo_dept_empl">Agregar Relacion</a>
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>ID_EMPLEADO</th>
+                    <th>ID_DEPARTAMENTO</th>
+                    <th>FECHA_INICIO</th>
+                    <th>FECHA_FIN</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for dept_empl in dept_empls %}
+                <tr>
+                    <td>{{dept_empl.id}}</td>
+                    <td>{{dept_empl.idEmpleado}}</td>
+                    <td>{{dept_empl.idDepartamento}}</td>
+                    <td>{{dept_empl.fecha_inicio}}</td>
+                    <td>{{dept_empl.fecha_fin}}</td>
+                    <td><a href="detalle_dept_empl/{{dept_empl.id}}">Ver Detalle</a></td>
+                    <td><a href="editar_dept_empl/{{dept_empl.id}}">Editar Relacion</a></td>
+                    <td><a href="eliminar_dept_empl/{{dept_empl.id}}">Eliminar Relacion</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

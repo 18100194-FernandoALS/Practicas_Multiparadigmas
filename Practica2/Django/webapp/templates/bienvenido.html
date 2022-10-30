@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD EN PYTHON</title>
+</head>
+<body>
+    <div>
+        <div>
+            <div><a href="departamentos/">DEPARTAMENTOS</a></div>
+            <div><a href="jefedepartamento/">JEFES DE DEPARTAMENTO</a></div>
+            <div><a href="dept_empl/">RELACION EMPLEADO-DEPARTAMENTO</a></div>
+        </div>
+    </div>
+    <div>
+        <h1>EMPLEADOS</h1>
+        
+        <a href="nuevo_empleado">Agregar Empleado</a>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Genero</th>
+                    <th>Fecha Nacimiento</th>
+                    <th>Fecha Contratacion</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for empleado in empleados%}
+                    <tr>
+                        <td>{{empleado.id}}</td>
+                        <td>{{empleado.nombre}} {{empleado.apellido}}</td>
+                        <td>{{empleado.genero}}</td>
+                        <td>{{empleado.fecha_nacimiento}}</td>
+                        <td>{{empleado.fecha_contratacion}}</td>
+                        <td><a href="detalle_empleado/{{empleado.id}}">Ver Detalle</a></td>
+                        <td><a href="editar_empleado/{{empleado.id}}">Editar Empleado</a></td>
+                        <td><a href="eliminar_empleado/{{empleado.id}}">Eliminar Empleado</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>
