@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST">
+        <h1>Agregar Empleado</h1>
+        <!--<table>
+            {{formaEmpleado}}
+            </table>-->
+            <table>
+            <tbody><tr>
+                <th><label for="id_fecha_nacimiento">Fecha nacimiento:</label></th>
+                <td>
+                  <input name="fecha_nacimiento" required="" id="id_fecha_nacimiento" type="date">
+                </td>
+              </tr>
+              <tr>
+                <th><label for="id_nombre">Nombre:</label></th>
+                <td>
+                  <input type="text" name="nombre" maxlength="255" required="" id="id_nombre">
+                </td>
+              </tr>
+              <tr>
+                <th><label for="id_apellido">Apellido:</label></th>
+                <td>
+                  <input type="text" name="apellido" maxlength="255" required="" id="id_apellido">
+                </td>
+              </tr>
+              <tr>
+                <th><label for="id_genero">Genero:</label></th>
+                <td>
+                  <input type="text" name="genero" maxlength="1" required="" id="id_genero">
+                </td>
+              </tr>
+              <tr>
+                <th><label for="id_fecha_contratacion">Fecha contratacion:</label></th>
+                <td>
+                  <input name="fecha_contratacion" required="" id="id_fecha_contratacion" type="date">
+
+                </td>
+              </tr>
+                    </tbody>
+            </table>
+        <button type="submit">Enviar</button>
+        {% csrf_token %}
+    </form>
+</body>
+</html>
