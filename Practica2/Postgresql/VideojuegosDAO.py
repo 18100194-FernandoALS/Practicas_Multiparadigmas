@@ -42,16 +42,16 @@ class VideojuegosDAO:
             return cursor.rowcount
         
 if __name__ == '__main__':
-    
+    """ 
     #Leer
     log.debug(f'Videojuegos en la base de datos: {VideojuegosDAO.seleccionar()}')
-    
+     """
     #Insertar
     j1 = Videojuego(titulo = "Castlevania", genero="Plataforma", lanzamiento=1994)
     juegosIn = VideojuegosDAO.insertar(j1)
     log.debug(f'Videojuegos agregados a la base de datos {juegosIn}')
     
-    #Actualizar
+    """ #Actualizar
     j2 = Videojuego(idJuego=1, titulo="Castlevania", genero="Plataforma", lanzamiento=1994)
     juegosIn = VideojuegosDAO.actualizar(j2)
     log.debug(f'Videojuegos actualizados {juegosIn}')
@@ -59,4 +59,4 @@ if __name__ == '__main__':
     #Eliminar
     j3 = Videojuego(idJuego= 3)
     JuegosEl = VideojuegosDAO.eliminar(j3)
-    log.debug(f'Juegos eliminados {JuegosEl}')
+    log.debug(f'Juegos eliminados {JuegosEl}') """
