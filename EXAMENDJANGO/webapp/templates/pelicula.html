@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div><a href="{% url 'index'%}">Regresar al inicio</a></div>
+            
+    <div>
+        <h1>PELICULAS</h1>
+        <a href="nuevo_pelicula">Agregar Copia de Pelicula</a>
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Numero de copias</th>
+                    <th>Formato</th>
+                    <th>Pelicula</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pelicula in copias %}
+                <tr>
+                    <td>{{pelicula.id}}</td>
+                    <td>{{pelicula.num_copias}}</td>
+                    <td>{{pelicula.formato}}</td>
+                    <td>{{pelicula.pelicula}}</td>
+                    <td><a href="detalle_pelicula/{{pelicula.id}}">Ver Detalle</a></td>
+                    <td><a href="editar_pelicula/{{pelicula.id}}">Editar Pelicula</a></td>
+                    <td><a href="eliminar_pelicula/{{pelicula.id}}">Eliminar Pelicula</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
