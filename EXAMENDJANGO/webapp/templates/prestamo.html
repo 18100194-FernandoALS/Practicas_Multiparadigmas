@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div><a href="{% url 'index'%}">Regresar al inicio</a></div>
+            
+    <div>
+        <h1>PRESTAMOS</h1>
+        <a href="nuevo_prestamo">Agregar Prestamo</a>
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>COPIA</th>
+                    <th>CLIENTE</th>
+                    <th>FECHA PRESTAMO</th>
+                    <th>FECHA ENTREGA</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for prestamo in prestamos %}
+                <tr>
+                    <td>{{prestamo.id}}</td>
+                    <td>{{prestamo.idCopia}}</td>
+                    <td>{{prestamo.idCliente}}</td>
+                    <td>{{prestamo.fecha_prestamo}}</td>
+                    <td>{{prestamo.fecha_entrega}}</td>
+                    <td><a href="detalle_prestamo/{{prestamo.id}}">Ver Detalle</a></td>
+                    <td><a href="editar_prestamo/{{prestamo.id}}">Editar Prestamo</a></td>
+                    <td><a href="eliminar_prestamo/{{prestamo.id}}">Eliminar Prestamo</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

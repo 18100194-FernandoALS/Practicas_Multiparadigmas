@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div><a href="{% url 'index'%}">Regresar al inicio</a></div>
+            
+    <div>
+        <h1>CLIENTES</h1>
+        <a href="nuevo_cliente">Agregar Cliente</a>
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cliente in clientes %}
+                <tr>
+                    <td>{{cliente.id}}</td>
+                    <td>{{cliente.nombre}}</td>
+                    <td>{{cliente.apellido}}</td>
+                    <td><a href="detalle_cliente/{{cliente.id}}">Ver Detalle</a></td>
+                    <td><a href="editar_cliente/{{cliente.id}}">Editar Cliente</a></td>
+                    <td><a href="eliminar_cliente/{{cliente.id}}">Eliminar Cliente</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
